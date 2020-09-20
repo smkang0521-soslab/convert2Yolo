@@ -763,8 +763,8 @@ class YOLO:
                         self.cls_list, self.cls_hierarchy, cls_name)
 
                     bndbox = "".join(["".join([str(e), " "]) for e in bb])
-                    contents = "".join(
-                        [contents, str(cls_id), " ", bndbox[:-1], "\n"])
+                    if cls_id!=None:
+                        contents = "".join([contents, str(cls_id), " ", bndbox[:-1], "\n"])
 
                 result[key] = contents
 
